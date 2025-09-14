@@ -32,3 +32,19 @@
 .product section a {
   margin-top: 2rem;
 }
+
+@media (max-width: 650px) {
+  .product {
+    margin: 1.5rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .product section {
+    width: auto;
+    margin: 0;
+    display: block;
+    gap: 0;
+    align-items: center;
+    margin-top: 3rem;
+  }
+}

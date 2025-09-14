@@ -5,3 +5,9 @@
   display: flex;
   position: relative;
 }
+
+@media (max-width: 650px) {
+  .app {
+    padding: 1rem;
+  }
+}

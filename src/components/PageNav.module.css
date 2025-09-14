@@ -32,3 +32,14 @@ a.ctaLink:visited {
   padding: 0.8rem 2rem;
   border-radius: 7px;
 }
+
+@media (max-width: 650px) {
+  .nav a:link,
+  .nav a:visited {
+    margin-right: 1rem;
+  }
+
+  .nav ul {
+    gap: 0px;
+  }
+}

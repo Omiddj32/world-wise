@@ -42,3 +42,14 @@
   font-size: 1.5rem;
   font-weight: 600;
 }
+
+@media (max-width: 650px) {
+  .login {
+    margin: 1.5rem;
+    padding: 1rem 2rem;
+  }
+
+  .form {
+    width: 100%;
+  }
+}
