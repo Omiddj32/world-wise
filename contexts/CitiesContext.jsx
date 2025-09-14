@@ -2,8 +2,7 @@ import { createContext, useEffect, useContext, useReducer } from "react";
 
 const CitiesContext = createContext();
 
-const BASE_URL =
-  "https://world-wise-b7cnrjxxd-omiddj32s-projects.vercel.app/app/cities";
+const BASE_URL = "https://world-wise-b7cnrjxxd-omiddj32s-projects.vercel.app";
 
 const initialState = {
   cities: [],
