@@ -2,7 +2,8 @@ import { createContext, useEffect, useContext, useReducer } from "react";
 
 const CitiesContext = createContext();
 
-const BASE_URL = "https://world-wise-b7cnrjxxd-omiddj32s-projects.vercel.app";
+// const BASE_URL = "http://localhost:9000";
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 const initialState = {
   cities: [],
