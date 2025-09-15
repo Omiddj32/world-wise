@@ -1,12 +1,14 @@
 import { createContext, useEffect, useContext, useReducer } from "react";
+import mockCities from "../data/monkCities";
 
 const CitiesContext = createContext();
 
-const BASE_URL = "http://localhost:9000";
-// const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+// const BASE_URL = "http://localhost:9000";
+const BASE_URL = false;
 
 const initialState = {
-  cities: [],
+  // cities: [],
+  cities: mockCities,
   isLoading: false,
   currentCity: {},
   error: "",
@@ -58,7 +60,7 @@ function CitiesProvider({ children }) {
       dispatch({ type: "loading" });
 
       try {
-        const res = await fetch(`${BASE_URL}/cities`);
+        const res = await fetch(`${BASE_URL && BASE_URL}/cities`);
         const data = await res.json();
 
         dispatch({ type: "cities/loaded", payload: data });
@@ -78,7 +80,7 @@ function CitiesProvider({ children }) {
     dispatch({ type: "loading" });
 
     try {
-      const res = await fetch(`${BASE_URL}/cities/${id}`);
+      const res = await fetch(`${BASE_URL && BASE_URL}/cities/${id}`);
       const data = await res.json();
 
       dispatch({ type: "city/loaded", payload: data });
@@ -94,7 +96,7 @@ function CitiesProvider({ children }) {
     dispatch({ type: "loading" });
 
     try {
-      const res = await fetch(`${BASE_URL}/cities`, {
+      const res = await fetch(`${BASE_URL && BASE_URL}/cities`, {
         method: "POST",
         body: JSON.stringify(newCity),
         headers: { "Content-Type": "applocation/json" },
@@ -115,7 +117,7 @@ function CitiesProvider({ children }) {
     dispatch({ type: "loading" });
 
     try {
-      await fetch(`${BASE_URL}/cities/${id}`, {
+      await fetch(`${BASE_URL && BASE_URL}/cities/${id}`, {
         method: "DELETE",
       });
 
